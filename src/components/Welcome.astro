@@ -1,0 +1,77 @@
+---
+import astroLogoWhite from '../assets/logo-wave.png';
+import astroImage1 from '../assets/waveconnect-1.jpg';
+import astroImage2 from '../assets/waveconnect-2.jpg';
+import astroImage3 from '../assets/waveconnect-3.jpg';
+import astroImage4 from '../assets/waveconnect-4.jpg';
+import logoLinkedin from '../assets/logo-linkedin.svg';
+import './styles.css';
+const images = [
+  { src: astroImage1.src, caption: 'Cantas bocas haberá que alimentar en A Mariña 2050?', place: ' Comedor do IES María Sarmiento en Viveiro' },
+  { src: astroImage2.src, caption: 'E se a solución ao futuro do territorio está nas túas mans?', place: 'Escola de Hostalería no IES de Foz' },
+  { src: astroImage3.src, caption: 'A diversidade alimentaria é a nosa forza. Cómo a protexemos?', place: 'Estación Agroecolóxica de Vieiro de Projecto Dispersor e Calará en Viveiro' },
+  { src: astroImage4.src, caption: 'Pasado, presente e futuro: conectemos as historias que nos definen.', place: 'Produtores interxeracionais colleitando faba da IXP Faba de Lourenzá' },
+];
+---
+
+<div id="container">
+	<nav class="ama-nav">
+		<div class="ama-nav-wrapper">
+			<ul class="ama-sociales">
+				<li><span>Conecta conmigo en</span><a href="https://www.linkedin.com/showcase/a-mari%C3%B1a-lab/" target="_blank"><span class="ama-icon"><img src={logoLinkedin.src} alt="Linkedin" /></span></a></li>
+			</ul>
+		</div>
+	</nav>
+	<main class="main">
+		<section id="hero" class="hero">
+			<div class="ama-cta">
+				<h1>WaveConnect conectamos e impulsamos ventas.</h1>
+				<div class="logo">
+					<img src={astroLogoWhite.src} width="150"  alt="A Mariña Lab" />
+				</div>
+				<div class="ama-text">
+					<p>En <strong>Wave Connect</strong> impulsamos el crecimiento de tu negocio en ventas, logrando resultados exponenciales a través de consultoría estratégica, desarrollo de negocio y formación de equipos de ventas</p>
+				</div>
+				<div class="cta-buttons">
+					<span>Hablemos, escríbenos por email o conectemos en <a href="https://www.linkedin.com/showcase/a-mari%C3%B1a-lab/" target="_blank">LinkedIn</a></span>
+					<a href="mailto:waveconnect@waveconnect.com">waveconnect@waveconnect.com</a>
+				</div>
+			</div>
+			<div class="hero-image">
+				{
+					images.map((image, index) => (
+						<div class="hero-carrusel" style={`background-image: url(${image.src});`}>
+							<div class="ama-overlight"></div>
+						</div>
+					))
+				}
+			</div>
+		</section>
+	</main>
+</div>
+<script>
+
+let index = 0;
+const carousels:any = document.querySelectorAll(".hero-carrusel");
+const captions:any = document.querySelectorAll(".caption-image");
+const firstImage = new Image();
+firstImage.src = carousels[0].style.backgroundImage.replace(/url\("|"\)/g, "");
+firstImage.onload = () => {
+  captions.forEach((caption:any) => caption.style.display = "block");
+	document.querySelectorAll(".caption-image").forEach(caption => {
+		caption.classList.add("visible");		
+	});
+  setInterval(updateCarousel, 6000);
+};
+function updateCarousel() {
+	document.querySelectorAll('.caption-image').forEach((caption:any) => {
+		caption.style.opacity = 0;
+	})
+  carousels.forEach((el:any, i:number) => {
+    el.style.opacity = i === index ? "1" : "0";
+  });
+	const curretnCaption:any = document.querySelector('.caption-' + index)
+  index = (index + 1) % carousels.length;
+	curretnCaption.style.opacity = 1;
+}
+</script>
