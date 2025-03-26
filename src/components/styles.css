@@ -67,6 +67,8 @@ body {
 	display: flex;
   list-style: none;
   gap: 0.5em;
+  margin: 0;
+  padding: 0; 
 }
 .ama-nav ul.ama-sociales li {
   display: flex;
@@ -74,24 +76,29 @@ body {
   gap: 0.5em;
 }
 
-.ama-nav ul.ama-sociales li span{
-  color: white; 
-  font-family: 'Inter-bold';
-  font-size: 12px;
-} 
+
 .ama-nav ul li a {
 	text-decoration: none;
   color: black;
 	opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 .ama-nav ul li a:hover {
 	opacity: .6;
 }
-.ama-nav .ama-icon {
+.ama-nav ul li a .ama-icon {
   width: 15px;
   aspect-ratio: 1;
   display: block;
 }
+.ama-nav ul li a .ama-text-share{
+  color: white; 
+  font-size: 12px;
+  font-family: 'Inter-regular';
+} 
 .ama-nav .ama-icon img {
   width: 100%;
 }
