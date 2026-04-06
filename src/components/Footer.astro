@@ -1,0 +1,53 @@
+---
+import imageSlide1 from '../assets/img/mediaset_es.png';
+import imageSlide2 from '../assets/img/rakuten.png';
+import imageSlide3 from '../assets/img/sh.png';
+import imageSlide4 from '../assets/img/whaletv.png';
+import imageSlide5 from '../assets/img/warner.png';
+import imageSlide6 from '../assets/img/media_experience_no_bg.png';
+import imageSlide7 from '../assets/img/adform3.png';
+import imageSlide8 from '../assets/img/qwest-tv.svg';
+---
+
+<footer class="footer">
+	<div class="footer-logos-carousel">
+		<p class="footer-logos-title">Relationships based on trust</p>
+		<div class="swiper logos-swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src={imageSlide1.src} alt="Logo " /></div>
+				<div class="swiper-slide"><img src={imageSlide2.src} alt="Logo 2" /></div>
+				<div class="swiper-slide"><img src={imageSlide3.src} alt="Logo 3" /></div>
+				<div class="swiper-slide"><img src={imageSlide4.src} alt="Logo 4" /></div>
+				<div class="swiper-slide"><img src={imageSlide5.src} alt="Logo 5" /></div>
+				<div class="swiper-slide"><img src={imageSlide6.src} alt="Logo 6" /></div>
+				<div class="swiper-slide"><img src={imageSlide7.src} alt="Logo 7" /></div>
+				<div class="swiper-slide"><img src={imageSlide8.src} alt="Logo 8" /></div>
+				<div class="swiper-slide"><img src={imageSlide1.src} alt="Logo 1" /></div>
+				<div class="swiper-slide"><img src={imageSlide2.src} alt="Logo 2" /></div>
+				<div class="swiper-slide"><img src={imageSlide3.src} alt="Logo 3" /></div>
+				<div class="swiper-slide"><img src={imageSlide4.src} alt="Logo 4" /></div>
+				<div class="swiper-slide"><img src={imageSlide5.src} alt="Logo 5" /></div>
+				<div class="swiper-slide"><img src={imageSlide6.src} alt="Logo 6" /></div>
+				<div class="swiper-slide"><img src={imageSlide7.src} alt="Logo 7" /></div>
+				<div class="swiper-slide"><img src={imageSlide8.src} alt="Logo 8" /></div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+
+new Swiper('.logos-swiper', {
+  modules: [Autoplay],
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  loop: true,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 4000,
+});
+</script>
