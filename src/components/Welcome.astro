@@ -10,7 +10,7 @@ import astroImage6 from '../assets/img/bg-hero-6.jpg';
 // import astroImage4 from '../assets/img/waveconnect-4.jpg';
 import logoLinkedin from '../assets/img/logo-linkedin.svg';
 import Footer from './Footer.astro';
-
+import HeroText from './HeroText.astro';
 import 'swiper/css';
 import './styles.css';
 const images = [
@@ -43,28 +43,22 @@ const images = [
 	</nav>
 	<main class="main">
 		<section id="hero" class="hero">
-			<div class="ama-cta">
-				<h1>Connecting CTV Strategies Across Europe</h1>
-				<div class="ama-text">
-					<p>Accelerate CTV growth with clarity and strategic connections.
-					<br>Enter or scale confidently, unlocking opportunities that drive sustained, strategic growth.</p>
-				</div>
-				<div class="ama-text-small">
-					<p>Sabela Ruy-Díaz. I help streaming and CTV brands enter or scale across Europe, tailoring strategies to each client and leveraging 20+ years of media experience at Wave Connect, a consulting firm specialized in CTV.</p>
-				</div>
-				<div class="cta-buttons">
-					<span>Let's connect: </span>
-					<a href="mailto:sabela@waveconnect.es">sabela@waveconnect.es</a>
-				</div>
-			</div>
+			<HeroText/>
 			<div class="hero-image">
-				{
-					images.map((image, index) => (
-						<div class="hero-carrusel" style={`background-image: url(${image.src});`}>
-							<div class="ama-overlight"></div>
-						</div>
-					))
-				}
+				<!-- Desktop: carousel -->
+				<div class="carousel-desktop">
+					{
+						images.map((image, index) => (
+							<div class="hero-carrusel" style={`background-image: url(${image.src});`}>
+								<div class="ama-overlight"></div>
+							</div>
+						))
+					}
+				</div>
+				<!-- Mobile: last image only -->
+				<div class="mobile-hero-image" style={`background-image: url(${images[images.length - 1].src});`}>
+					<div class="ama-overlight"></div>
+				</div>
 			</div>
 		</section>
 	</main>
