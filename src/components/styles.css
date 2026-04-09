@@ -315,11 +315,11 @@ h2 {
     margin: 0 auto;
 }
 .footer-logos-title {
-    text-align: center;
-    color: white;
-    font-size: 20px;
+    text-align: left;
+    color: #a6a6a6;
+    font-size: 18px;
     letter-spacing: 1px;
-    margin: 0 0 1.75rem 0;
+    margin: 0 0 1.75rem;
 }
 .logos-slider {
     opacity: 0;
